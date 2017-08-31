@@ -25,11 +25,11 @@
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     <script>
       $(document).ready(function(){
-
+        getPhotos();
       });
 
       function getPhotos(){
-        var url = 'img.lst';
+        var url = 'images.php';
         $.post( url, function( data ) {
           var imgs = data.split("\n");
           imgs.forEach(function(i){
