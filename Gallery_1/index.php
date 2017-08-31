@@ -6,6 +6,7 @@
     <title>Gallery</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/lightbox.css" rel="stylesheet">
     <style type="text/css">
       .gal {
         -webkit-column-count: 3; /* Chrome, Safari, Opera */
@@ -32,8 +33,8 @@
         var url = 'images.php';
         $.post( url, function( data ) {
           var imgs = data.split("\n");
-          imgs.forEach(function(i){
-            $("#gal").append('<img src="photos/'+i+'" alt="">');
+          imgs.forEach(function(i,ii){
+            $("#gal").append('<a href="photos/'+i+'" data-lightbox="image-'+ii+'"><img src="photos/'+i+'" alt=""></a>');
           });
         });
       }
@@ -53,5 +54,6 @@
     </div>
     <script type="text/javascript">
     </script>
+    <script src="libs/lightbox.js"></script>
   </body>
 </html>
